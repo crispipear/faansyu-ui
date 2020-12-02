@@ -19,8 +19,8 @@ export default {
     xxs: '0.4rem'
   },
   colors: {
-    primary: '#667EBE',
-    secondary: '#8F73AF',
+    primary: '#9280CE',
+    secondary: '#667EBE',
     success: '#61A079',
     info: '#639BAC',
     warning: '#C36767',
