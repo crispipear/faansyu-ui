@@ -1,21 +1,61 @@
 import React from 'react'
+import { FsThemeProvider } from 'faanshu-ui'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import {
+  About,
+  GettingStarted,
+  Overview,
+  //components
+  Chip,
+  Button,
+  Typography
+} from './content';
+import Nav from './Nav';
 
-import { Chip, FsThemeProvider } from 'faanshu-ui'
-import 'faanshu-ui/dist/index.css'
+const COMPONENTS_LIST = [
+  {
+    name: 'Overview',
+    path: '/overview',
+    component: Overview
+  },
+  {
+    name: 'Chip',
+    path: '/chip',
+    component: Chip
+  },
+  {
+    name: 'Button',
+    path: '/button',
+    component: Button
+  },
+  {
+    name: 'Typograhpy',
+    path: '/typography',
+    component: Typography
+  },
+]
+
+const COMPONENT_ROUTES = COMPONENTS_LIST.map(
+  (item) => <Route path={item.path} key={item.path} component={item.component}/>
+)
 
 const App = () => {
   return (
     <FsThemeProvider>
-      <Chip text="Primary light" shade="light"/>
-      <Chip text="Primary" />
-      <Chip text="Primary dark" shade="dark"/>
-      <Chip text="Secondary light" variant="secondary" shade="light"/>
-      <Chip text="Secondary" variant="secondary" />
-      <Chip text="Secondary dark" variant="secondary" shade="dark"/>
-      <Chip text="Success" variant="success" />
-      <Chip text="Info" variant="info" />
-      <Chip text="Warning" variant="warning" />
-      <Chip text="Disabled" variant="disabled" />
+      <Router>
+        <Nav componentsList={COMPONENTS_LIST}/>
+        <main className="main">
+          <Switch>
+            <Route exact path='/' component={About} />
+            <Route path='/getting-started' component={GettingStarted} />
+            {COMPONENT_ROUTES}
+          </Switch>
+        </main>
+      </Router>
     </FsThemeProvider>
   )
 }

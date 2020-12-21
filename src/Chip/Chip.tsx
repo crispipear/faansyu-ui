@@ -1,29 +1,21 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { ColorVariants, ShadeTypes, FsTheme } from '../fs.types'
-import { fontColorByShade } from '../utils/fontColor'
-interface StyleProps {
-  variant?: ColorVariants
+import { VariantTypes, ShadeTypes, BaseComponentProps } from '../fs.types'
+import { textColor } from '../utils/cssUtils'
+
+interface ChipProps extends BaseComponentProps {
+  variant?: VariantTypes
   shade?: ShadeTypes
 }
 
-interface Props extends StyleProps {
-  text?: string
-}
-
-const Chip = styled.span<
-  {
-    theme: FsTheme
-  } & StyleProps
->((props) => {
+const Chip = styled.span<ChipProps>((props) => {
   const { colors, spacing, fontSize, borderRadius } = props.theme
   const { variant = 'primary', shade = 'main' } = props
-
   return {
     backgroundColor: colors[variant][shade],
-    color: fontColorByShade(colors[variant], shade),
+    color: textColor(colors[variant], false),
     padding: `${spacing.xxs} ${spacing.xs}`,
-    margin: `0 0 ${spacing.xxs} ${spacing.xxs}`,
+    margin: `0 ${spacing.xs} ${spacing.xs} 0`,
     fontSize: fontSize.xs,
     fontWeight: 500,
     display: 'inline-block',
@@ -31,10 +23,15 @@ const Chip = styled.span<
   }
 })
 
-function ChipComponent({ text, variant, shade }: Props): React.ReactElement {
+function ChipComponent({
+  children,
+  variant,
+  shade,
+  style
+}: ChipProps): React.ReactElement {
   return (
-    <Chip variant={variant} shade={shade}>
-      {text}
+    <Chip className='fsui-chip' variant={variant} shade={shade} style={style}>
+      {children}
     </Chip>
   )
 }

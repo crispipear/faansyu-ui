@@ -1,0 +1,46 @@
+.nav{
+  box-sizing: border-box;
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #fbfcfd;
+  border-right: solid #E4E4E8 1px;
+}
+
+.nav a{
+  text-decoration: none;
+  font-size: 0.84rem;
+  color: #39373E;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav ul li {
+  padding: 0.64rem 0;
+  transition: all 0.16s;
+}
+
+.nav ul li:hover{
+  background-color: rgb(224,229,242);
+  color: rgb(61,76,114);
+}
+
+.nav .current-route li{
+  font-weight: 500;
+  background-color: rgb(224,229,242);
+  color: rgb(61,76,114);
+}
+
+.nav ul li{
+  padding: 0.92rem 1.6rem;
+}
+
+.nav-title h1, .nav-title span {
+  padding: 0 1.6rem;
+}

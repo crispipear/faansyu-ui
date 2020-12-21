@@ -1,44 +1,56 @@
 export type ShadeTypes = 'light' | 'main' | 'dark'
 
-export type ColorVariants =
+export type SizeTypes = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
+
+export type VariantTypes =
   | 'primary'
   | 'secondary'
   | 'success'
   | 'info'
   | 'warning'
   | 'disabled'
+  | 'text'
+  | 'border'
 
-export interface ColorShades {
-  light?: string
-  main?: string
-  dark?: string
+export interface ColorItem {
+  light: string
+  main: string
+  dark: string
 }
 
-export type ColorContent = string | ColorShades
+export type ColorsHex = {
+  [key in VariantTypes]?: string
+}
 
 export interface Colors {
-  primary?: ColorContent
-  secondary?: ColorContent
-  success?: ColorContent
-  info?: ColorContent
-  warning?: ColorContent
-  disabled?: ColorContent
-  text?: ColorContent
+  hex?: ColorsHex
+  primary: ColorItem
+  secondary: ColorItem
+  success: ColorItem
+  info: ColorItem
+  warning: ColorItem
+  disabled: ColorItem
+  text: ColorItem
+  border: ColorItem
 }
 
 interface Sizes {
-  xxl?: string
-  xl?: string
-  l?: string
-  m?: string
-  s?: string
-  xs?: string
-  xxs?: string
+  xxl: string
+  xl: string
+  l: string
+  m: string
+  s: string
+  xs: string
+  xxs: string
 }
 
 export interface FsTheme {
-  fontSize?: Sizes
-  borderRadius?: string
-  spacing?: Sizes
-  colors?: Colors
+  fontSize: Sizes
+  borderRadius: string
+  spacing: Sizes
+  colors: Colors
 }
+
+export type BaseComponentProps = React.PropsWithChildren<{
+  style?: React.CSSProperties
+}>

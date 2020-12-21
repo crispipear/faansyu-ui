@@ -29,7 +29,7 @@ const linearShade = (percentage: number, color: string) => {
 }
 
 const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/i
-const rgbRegex = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/
+const rgbRegex = /rgb\((\d{1,3}),\s?(\d{1,3}),\s?(\d{1,3})\)/
 
 const shadeColor = (color: string, percentage: number): string => {
   if (hexRegex.test(color)) {
@@ -41,14 +41,14 @@ const shadeColor = (color: string, percentage: number): string => {
   } else if (rgbRegex.test(color)) {
     return linearShade(percentage, color)
   } else {
-    throw new Error('color must be HEX or RGB')
+    throw new Error(`source color "${color}" must be HEX or RGB`)
   }
 }
 
-export const lighten = (color: string, value?: number): string => {
-  return shadeColor(color, value || 0.8)
+export const lighten = (color: string, value = 0.8): string => {
+  return shadeColor(color, value)
 }
 
-export const darken = (color: string, value?: number): string => {
-  return shadeColor(color, value || -0.4)
+export const darken = (color: string, value = 0.4): string => {
+  return shadeColor(color, value * -1)
 }

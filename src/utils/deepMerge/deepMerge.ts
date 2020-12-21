@@ -10,9 +10,9 @@ function isObject(item: any): boolean {
  * @param target
  * @param source
  */
-export function deepMerge<T>(target: T, source: T): T {
+export function deepMerge<T>(target: T, source: Partial<T>): T {
   if (!isObject(target) || !isObject(source)) {
-    return source
+    return target
   }
 
   Object.keys(source).forEach((key) => {

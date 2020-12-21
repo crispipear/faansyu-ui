@@ -1,3 +1,6 @@
-export * from './Chip'
 export { default as FsThemeProvider } from './Themes'
 export * from './fs.types'
+export * from './Chip'
+export * from './Button'
+export * from './Divider'
+export * from './Typography'
