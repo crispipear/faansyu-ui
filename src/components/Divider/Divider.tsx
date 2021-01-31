@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BaseComponentProps } from '../fs.types'
+import { BaseComponentProps } from '../../fs.types'
 
 type DividerProps = BaseComponentProps
 

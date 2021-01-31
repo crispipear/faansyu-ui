@@ -1,3 +1,5 @@
+export type Primitive = string | number | symbol | boolean
+
 export type ShadeTypes = 'light' | 'main' | 'dark'
 
 export type SizeTypes = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'

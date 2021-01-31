@@ -1,40 +1,40 @@
 .demo {
   box-sizing: border-box;
   border: 1px solid #E4E4E8;
-  margin: 1rem 0;
-  padding: 2rem;
+  margin: 0.92rem 0;
 }
 
 .code-snippet{
-  margin-top: 1rem;
   font-size: 0.84rem;
   line-height: 1.2;
 }
 
-.code-snippet code, .code-snippet pre {
-  padding: 0.8rem 1rem!important;
+.code-snippet pre {
+  padding: 0.92rem 1.6rem!important;
   margin: 0;
 }
 
-.code-snippet__content, .code-snippet__controls {
-  display: inline-block;
-  height: 36vh;
-}
-
 .code-snippet__content{
-  width: calc(100% - 60px);
-  margin-right: 20px;
+  width: 100%;
+  height: 40vh;
   overflow: scroll;
 }
 
-.code-snippet__controls{
-  width: 40px;
+.demo__content{
+  padding: 1.6rem;
 }
 
-.code-snippet__controls div {
-  width: 32px;
-  height: 32px;
+.demo__controls{
+  border-top: 1px solid #E4E4E8;
+  border-bottom: 1px solid #E4E4E8;
+  padding: 0.64rem 1.6rem;
+}
+
+.demo__controls div {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background-color: lightgray;
-  margin-bottom: 12px;
+  margin-right: 8px;
 }

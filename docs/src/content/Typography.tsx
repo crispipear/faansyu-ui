@@ -10,7 +10,7 @@ import { Header, Paragraph } from 'faanshu-ui'
 export default const Typography = () => {
   return (
     <div>
-    <Header>Header main title</Header>
+      <Header>Header main title</Header>
       <Header fontSize="m" color="primary">Subheader</Header>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -28,7 +28,7 @@ export default const Typography = () => {
 const TypographyPage = () => {
   return (
     <div>
-      <Header color="primary">Typography</Header>
+      <Header>Typography</Header>
       <Paragraph>
         Basic text component to display headings, text and paragraphs.
       </Paragraph>

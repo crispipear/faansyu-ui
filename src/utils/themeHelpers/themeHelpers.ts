@@ -45,7 +45,7 @@ const shadeColor = (color: string, percentage: number): string => {
   }
 }
 
-export const lighten = (color: string, value = 0.8): string => {
+export const lighten = (color: string, value = 0.84): string => {
   return shadeColor(color, value)
 }
 

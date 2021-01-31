@@ -14,10 +14,6 @@ function CodeSnippet({code}: Props): React.ReactElement {
          {code}
        </SyntaxHighlighter>
       </div>
-      <div className="code-snippet__controls">
-        <div />
-        <div />
-      </div>
     </div>
   )
 }

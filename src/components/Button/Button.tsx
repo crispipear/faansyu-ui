@@ -1,15 +1,15 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { VariantTypes, BaseComponentProps } from '../fs.types'
+import { VariantTypes, BaseComponentProps } from '../../fs.types'
 import {
   textColor,
   borderColor,
   backgroundColor,
   activeColor,
   hoverColor
-} from '../utils/cssUtils'
+} from '../../utils/cssUtils'
 
-interface ButtonProps extends BaseComponentProps {
+export interface ButtonProps extends BaseComponentProps {
   variant?: VariantTypes
   light?: boolean
   outlined?: boolean
@@ -17,7 +17,7 @@ interface ButtonProps extends BaseComponentProps {
   onClick?: React.MouseEventHandler<HTMLElement>
 }
 
-const Button = styled.button<ButtonProps>((props) => {
+const StyledButton = styled.button<ButtonProps>((props) => {
   const { colors, spacing, fontSize, borderRadius } = props.theme
   const { variant = 'primary', rounded, outlined, light } = props
   return {
@@ -33,7 +33,6 @@ const Button = styled.button<ButtonProps>((props) => {
     backgroundColor: backgroundColor(colors[variant], light, outlined),
     color: textColor(colors[variant], light, outlined),
     padding: `${spacing.xs} ${spacing.s}`,
-    margin: `0 ${spacing.s} ${spacing.s} 0`,
     fontSize: fontSize.s,
     fontWeight: 500,
     transition: 'all 0.16s',
@@ -46,7 +45,7 @@ const Button = styled.button<ButtonProps>((props) => {
   }
 })
 
-function ButtonComponent({
+export function Button({
   children,
   onClick,
   ...restProps
@@ -58,10 +57,8 @@ function ButtonComponent({
   }
 
   return (
-    <Button className='fsui-button' onClick={handleClick} {...restProps}>
+    <StyledButton className='fsui-button' onClick={handleClick} {...restProps}>
       {children}
-    </Button>
+    </StyledButton>
   )
 }
-
-export default ButtonComponent

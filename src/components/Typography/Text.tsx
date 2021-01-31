@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SizeTypes, VariantTypes, BaseComponentProps } from '../fs.types'
+import { SizeTypes, VariantTypes, BaseComponentProps } from '../../fs.types'
 
-interface TextProps extends BaseComponentProps {
+export interface TextProps extends BaseComponentProps {
   fontSize?: SizeTypes
   color?: VariantTypes
 }
 
-const Text = styled.span<TextProps>((props) => {
+const StyledText = styled.span<TextProps>((props) => {
   const { colors, fontSize } = props.theme
   return {
     fontSize: props.fontSize ? fontSize[props.fontSize] : fontSize.s,
@@ -16,15 +16,13 @@ const Text = styled.span<TextProps>((props) => {
   }
 })
 
-function TextComponent({
+export function Text({
   children,
   ...restProps
 }: TextProps): React.ReactElement {
   return (
-    <Text className='fsui-text' {...restProps}>
+    <StyledText className='fsui-text' {...restProps}>
       {children}
-    </Text>
+    </StyledText>
   )
 }
-
-export default TextComponent

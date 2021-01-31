@@ -22,40 +22,40 @@ const defaultTheme: FsTheme = {
   },
   colors: {
     border: {
-      light: 'rgb(250,250,250)',
+      light: 'rgb(251,251,251)',
       main: '#E4E4E8',
       dark: 'rgb(137,137,139)'
     },
     disabled: {
-      light: 'rgb(238,238,238)',
+      light: 'rgb(241,241,241)',
       main: '#AAAAAA',
       dark: 'rgb(102,102,102)'
     },
     info: {
-      light: 'rgb(224,235,238)',
-      main: '#639BAC',
-      dark: 'rgb(59,93,103)'
+      light: 'rgb(228,240,242)',
+      main: '#59A0AD',
+      dark: 'rgb(53,96,104)'
     },
     primary: {
-      light: 'rgb(224,229,242)',
-      main: '#667EBE',
-      dark: 'rgb(61,76,114)'
+      light: 'rgb(229,231,243)',
+      main: '#5F6AB7',
+      dark: 'rgb(57,64,110)'
     },
     secondary: {
-      light: 'rgb(232,229,242)',
-      main: '#8A7BBE',
-      dark: 'rgb(83,74,114)'
+      light: 'rgb(236,230,242)',
+      main: '#8865AC',
+      dark: 'rgb(82,61,103)'
     },
     success: {
-      light: 'rgb(223,236,228)',
-      main: '#61A079',
-      dark: 'rgb(58,96,73)'
+      light: 'rgb(232,240,234)',
+      main: '#6EA07D',
+      dark: 'rgb(66,96,75)'
     },
-    text: { light: 'rgb(215,215,216)', main: '#39373E', dark: 'rgb(34,33,37)' },
+    text: { light: 'rgb(223,223,224)', main: '#39373E', dark: 'rgb(34,33,37)' },
     warning: {
-      light: 'rgb(243,225,225)',
-      main: '#C36767',
-      dark: 'rgb(117,62,62)'
+      light: 'rgb(246,231,236)',
+      main: '#C46C87',
+      dark: 'rgb(118,65,81)'
     }
   }
 }

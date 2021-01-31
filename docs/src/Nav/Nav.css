@@ -27,14 +27,12 @@
 }
 
 .nav ul li:hover{
-  background-color: rgb(224,229,242);
-  color: rgb(61,76,114);
+  background-color: rgb(240, 240, 240);
 }
 
 .nav .current-route li{
   font-weight: 500;
-  background-color: rgb(224,229,242);
-  color: rgb(61,76,114);
+  background-color: rgb(240, 240, 240);
 }
 
 .nav ul li{

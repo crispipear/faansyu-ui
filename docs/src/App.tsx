@@ -10,7 +10,8 @@ import {
   GettingStarted,
   Overview,
   //components
-  Chip,
+  Table,
+  Tag,
   Button,
   Typography
 } from './content';
@@ -23,14 +24,19 @@ const COMPONENTS_LIST = [
     component: Overview
   },
   {
-    name: 'Chip',
-    path: '/chip',
-    component: Chip
-  },
-  {
     name: 'Button',
     path: '/button',
     component: Button
+  },
+  {
+    name: 'Table',
+    path: '/table',
+    component: Table
+  },
+  {
+    name: 'Tag',
+    path: '/tag',
+    component: Tag
   },
   {
     name: 'Typograhpy',

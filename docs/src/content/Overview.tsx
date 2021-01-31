@@ -1,7 +1,9 @@
 import React from 'react'
+import { Header } from 'faanshu-ui'
+
 const Overview = () => {
   return (
-    <h1>Overview</h1>
+    <Header>Overview</Header>
   )
 }
 

@@ -26,7 +26,12 @@
     "@types/react-router-dom": "^5.1.6"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-use-before-define": "off"
+    }
   },
   "browserslist": {
     "production": [

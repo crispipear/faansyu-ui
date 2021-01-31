@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SizeTypes, VariantTypes, BaseComponentProps } from '../fs.types'
+import { SizeTypes, VariantTypes, BaseComponentProps } from '../../fs.types'
 
-interface HeaderProps extends BaseComponentProps {
+export interface HeaderProps extends BaseComponentProps {
   fontSize?: SizeTypes
   color?: VariantTypes
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 
-const Header = styled.div<HeaderProps>((props) => {
+const StyledHeader = styled.div<HeaderProps>((props) => {
   const { colors, spacing, fontSize } = props.theme
   return {
     fontSize: props.fontSize ? fontSize[props.fontSize] : fontSize.l,
@@ -18,16 +18,14 @@ const Header = styled.div<HeaderProps>((props) => {
   }
 })
 
-function HeaderComponent({
+export function Header({
   children,
   tag = 'h1',
   ...restProps
 }: HeaderProps): React.ReactElement {
   return (
-    <Header className='fsui-header' as={tag} {...restProps}>
+    <StyledHeader className='fsui-header' as={tag} {...restProps}>
       {children}
-    </Header>
+    </StyledHeader>
   )
 }
-
-export default HeaderComponent

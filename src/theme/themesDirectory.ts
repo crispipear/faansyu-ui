@@ -1,5 +1,16 @@
 import { ColorsHex } from '../fs.types'
 
+const defaultYam = {
+  primary: '#5F6AB7',
+  secondary: '#8865AC',
+  success: '#6EA07D',
+  info: '#59A0AD',
+  warning: '#C46C87',
+  disabled: '#AAAAAA',
+  text: '#39373E',
+  border: '#E4E4E8'
+}
+
 const classicYam = {
   primary: '#047C3B',
   secondary: '#70418E',
@@ -12,7 +23,7 @@ const classicYam = {
 }
 
 const starFairies = {
-  primary: '#293967',
+  primary: '#384d8c',
   secondary: '#DC658A',
   success: '#5A8788',
   info: '#9C6DB9',
@@ -47,6 +58,7 @@ const matchaCherry = {
 export const directory: {
   [name: string]: ColorsHex
 } = {
+  defaultYam,
   classicYam,
   starFairies,
   brightNight,
@@ -54,7 +66,7 @@ export const directory: {
 }
 
 export type ThemeNames =
-  | 'default'
+  | 'defaultYam'
   | 'classicYam'
   | 'starFairies'
   | 'brightNight'

@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SizeTypes, VariantTypes, BaseComponentProps } from '../fs.types'
+import { SizeTypes, VariantTypes, BaseComponentProps } from '../../fs.types'
 
-interface ParagraphProps extends BaseComponentProps {
+export interface ParagraphProps extends BaseComponentProps {
   fontSize?: SizeTypes
   color?: VariantTypes
 }
 
-const Paragraph = styled.p<ParagraphProps>((props) => {
+const StyledParagraph = styled.p<ParagraphProps>((props) => {
   const { colors, spacing, fontSize } = props.theme
   return {
     fontSize: props.fontSize ? fontSize[props.fontSize] : fontSize.s,
@@ -18,15 +18,13 @@ const Paragraph = styled.p<ParagraphProps>((props) => {
   }
 })
 
-function ParagraphComponent({
+export function Paragraph({
   children,
   ...restProps
 }: ParagraphProps): React.ReactElement {
   return (
-    <Paragraph className='fsui-paragraph' {...restProps}>
+    <StyledParagraph className='fsui-paragraph' {...restProps}>
       {children}
-    </Paragraph>
+    </StyledParagraph>
   )
 }
-
-export default ParagraphComponent
