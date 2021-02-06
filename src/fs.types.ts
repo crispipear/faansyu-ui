@@ -14,37 +14,15 @@ export type VariantTypes =
   | 'text'
   | 'border'
 
-export interface ColorItem {
-  light: string
-  main: string
-  dark: string
-}
+export type ColorItem = Record<ShadeTypes, string>
 
-export type ColorsHex = {
-  [key in VariantTypes]?: string
-}
+export type ColorsHex = Partial<Record<VariantTypes, string>>
 
-export interface Colors {
+export type Colors = Record<VariantTypes, ColorItem> & {
   hex?: ColorsHex
-  primary: ColorItem
-  secondary: ColorItem
-  success: ColorItem
-  info: ColorItem
-  warning: ColorItem
-  disabled: ColorItem
-  text: ColorItem
-  border: ColorItem
 }
 
-interface Sizes {
-  xxl: string
-  xl: string
-  l: string
-  m: string
-  s: string
-  xs: string
-  xxs: string
-}
+export type Sizes = Record<SizeTypes, string>
 
 export interface FsTheme {
   fontSize: Sizes
@@ -54,5 +32,6 @@ export interface FsTheme {
 }
 
 export type BaseComponentProps = React.PropsWithChildren<{
+  className?: string
   style?: React.CSSProperties
 }>

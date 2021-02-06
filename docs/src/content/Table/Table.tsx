@@ -1,5 +1,5 @@
 import React from 'react'
-import Demo, { createCodeString } from '../Demo';
+import Demo, { createCodeString } from '../../Demo';
 import { Header, Paragraph, Table, ITableColumn } from 'faanshu-ui'
 
 interface ITea {
@@ -16,9 +16,9 @@ const columns: ITableColumn<ITea>[] = [
     content: (tea) => tea.name
   },
   {
-    header: "Tea type",
+    header: "Type of tea",
     key: "type",
-    content: (tea) => tea.type
+    content: (tea) => tea.type + " tea"
   },
   {
     header: "Chinese",
@@ -77,7 +77,7 @@ const TablePage = () => {
           render: TABLE_STRING})
         }
       >
-        <Table data={data} columns={columns} />
+        <Table data={data} columns={columns} striped={true} />
       </Demo>
     </div>
   )

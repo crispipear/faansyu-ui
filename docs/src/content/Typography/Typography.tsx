@@ -1,15 +1,9 @@
 import React from 'react'
-import Demo from '../Demo';
+import Demo, {createCodeString} from '../../Demo';
 import { Header, Paragraph } from 'faanshu-ui'
 
-const codeString =
+const CODE =
 `
-import React from 'react'
-import { Header, Paragraph } from 'faanshu-ui'
-
-export default const Typography = () => {
-  return (
-    <div>
       <Header>Header main title</Header>
       <Header fontSize="m" color="primary">Subheader</Header>
       <Paragraph>
@@ -20,9 +14,6 @@ export default const Typography = () => {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
         officia deserunt mollit anim id est laborum.
       </Paragraph>
-    </div>
-  )
-}
 `
 
 const TypographyPage = () => {
@@ -32,7 +23,7 @@ const TypographyPage = () => {
       <Paragraph>
         Basic text component to display headings, text and paragraphs.
       </Paragraph>
-      <Demo code={codeString}>
+      <Demo code={createCodeString({component: "Typography", used: ["Header, Paragraph"], render: CODE})}>
         <Header>Header big title</Header>
         <Header fontSize="m" color="primary">Subheader</Header>
         <Paragraph>

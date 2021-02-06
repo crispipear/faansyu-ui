@@ -1,7 +1,9 @@
 import React from 'react'
+import { Header } from 'faanshu-ui'
+
 const GettingStarted = () => {
   return (
-    <h1>Getting started</h1>
+    <Header>Getting started</Header>
   )
 }
 

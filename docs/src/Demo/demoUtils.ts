@@ -12,13 +12,18 @@ function stringifyConfigItems(configs: {
 }): string
 {
   return Object.entries(configs).map(([k, v]) =>  
-    `\nconst ${k} = ${JSON.stringify(v, function(key, val) {
-      console.log(key, val)
-      if (typeof val === 'function') {
-        return "rmjsqts" + val.toString() + "rmjsqts";
-      }
-      return val;
-    }, 2).replace(/"(\w+)"\s*:/g, '$1:').replace(/"rmjsqts(.*?)rmjsqts"/g, '$1')}\n`
+    `\nconst ${k} = ${
+      JSON.stringify(v, function(key, val) {
+        if (typeof val === 'function') {
+          return "rmjsqts" + val.toString() + "rmjsqts";
+        }
+        return val;
+      }, 2)
+      .replace(/"(\w+)"\s*:/g, '$1:')
+      .replace(/\\"/g, '"')
+      .replace(/"rmjsqts(.*?)rmjsqts"/g, '$1')
+    }
+    `
   ).join("")
 }
 

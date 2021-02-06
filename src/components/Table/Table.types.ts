@@ -10,10 +10,10 @@ export interface ITableColumn<T> {
 export interface TableStyleProps {
   light?: boolean
   variant?: VariantTypes
-  rounded?: boolean
+  striped?: boolean
 }
 
-export interface TableProps<T> extends BaseComponentProps {
+export interface TableProps<T> extends TableStyleProps, BaseComponentProps {
   data: Array<T>
   columns: ITableColumn<T>[]
 }

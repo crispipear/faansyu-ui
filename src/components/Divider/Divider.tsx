@@ -15,7 +15,7 @@ const Divider = styled.div((props) => {
 })
 
 function DividerComponent({ style }: DividerProps): React.ReactElement {
-  return <Divider className='fsui-divider' style={style} />
+  return <Divider style={style} />
 }
 
 export default DividerComponent

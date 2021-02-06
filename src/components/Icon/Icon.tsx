@@ -29,7 +29,6 @@ export function Icon({
 }: IconProps): React.ReactElement {
   return (
     <StyledIcon
-      className='fsui-icon'
       dangerouslySetInnerHTML={name ? { __html: Directory[name] } : undefined}
       {...restProps}
     >

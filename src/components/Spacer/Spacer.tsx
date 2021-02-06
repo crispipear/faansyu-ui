@@ -12,17 +12,26 @@ const StyledSpacer = styled.div<SpacerProps>((props) => {
   const { gap = 's', direction = 'row' } = props
   const margin =
     direction === 'row'
-      ? `0 ${spacing[gap]} 0 0`
+      ? {
+          marginRight: spacing[gap]
+        }
       : direction === 'column'
-      ? `0 0 ${spacing[gap]} 0`
-      : 0
-
+      ? {
+          marginBottom: spacing[gap]
+        }
+      : {}
   return {
     display: 'inline-flex',
     flexDirection: direction,
+    flexWrap: 'wrap',
     '>.fsui-spacer-item:not(:last-child)': {
-      margin
-    }
+      ...margin
+    },
+    ...(direction === 'row' && {
+      '>.fsui-spacer-item': {
+        marginBottom: spacing[gap]
+      }
+    })
   }
 })
 
@@ -42,9 +51,5 @@ export function Spacer({
     [children]
   )
 
-  return (
-    <StyledSpacer className='fsui-spacer' {...restProps}>
-      {items}
-    </StyledSpacer>
-  )
+  return <StyledSpacer {...restProps}>{items}</StyledSpacer>
 }

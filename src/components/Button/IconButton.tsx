@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { VariantTypes, BaseComponentProps } from '../../fs.types'
+import { ButtonProps } from './Button'
 import { IconNames } from '../Icon/Icon.types'
 import { Icon } from '../Icon'
 import {
@@ -11,14 +11,8 @@ import {
   hoverColor
 } from '../../utils/cssUtils'
 
-export interface IconButtonProps extends BaseComponentProps {
+export type IconButtonProps = Omit<ButtonProps, 'rounded'> & {
   name?: IconNames
-  variant?: VariantTypes
-  clear?: boolean
-  light?: boolean
-  outlined?: boolean
-  rounded?: boolean
-  onClick?: React.MouseEventHandler<HTMLElement>
 }
 
 const StyledIconButton = styled.button<IconButtonProps>((props) => {

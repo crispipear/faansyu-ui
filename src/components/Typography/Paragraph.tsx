@@ -22,9 +22,5 @@ export function Paragraph({
   children,
   ...restProps
 }: ParagraphProps): React.ReactElement {
-  return (
-    <StyledParagraph className='fsui-paragraph' {...restProps}>
-      {children}
-    </StyledParagraph>
-  )
+  return <StyledParagraph {...restProps}>{children}</StyledParagraph>
 }

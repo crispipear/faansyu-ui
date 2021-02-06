@@ -8,6 +8,7 @@ import {
 import {
   About,
   GettingStarted,
+  Theming,
   Overview,
   //components
   Table,
@@ -58,6 +59,7 @@ const App = () => {
           <Switch>
             <Route exact path='/' component={About} />
             <Route path='/getting-started' component={GettingStarted} />
+            <Route path='/theming' component={Theming} />
             {COMPONENT_ROUTES}
           </Switch>
         </main>

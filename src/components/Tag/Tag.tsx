@@ -30,9 +30,5 @@ const StyledTag = styled.span<TagProps>((props) => {
 })
 
 export function Tag({ children, ...restProps }: TagProps): React.ReactElement {
-  return (
-    <StyledTag className='fsui-tag' {...restProps}>
-      {children}
-    </StyledTag>
-  )
+  return <StyledTag {...restProps}>{children}</StyledTag>
 }

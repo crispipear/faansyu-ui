@@ -6,6 +6,7 @@ import './Nav.css';
 const INTRO_ROUTES = [
   ['About', '/'],
   ['Getting started', '/getting-started'],
+  ['Theming', '/theming']
 ]
 
 interface ComponentListItem {
@@ -25,21 +26,24 @@ function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.Rea
   return (
     <nav className="nav">
       <div className="nav-title">
-        <Link to="/">
-          <Header fontSize="m" style={{margin: 0, paddingTop: '1rem'}}>
-            faanshu ui
-          </Header>
-        </Link>
-        <Text fontSize="xs">
-          version: v0.0.0
-        </Text>
+        <div className="nav-logo"/>
+        <div>
+          <Link to="/">
+            <Header fontSize="m" style={{margin: 0}}>
+              faanshu ui
+            </Header>
+          </Link>
+          <Text color="primary" fontSize="xxs">
+            version: v0.0.0
+          </Text>
+        </div>
       </div>
       <Divider />
       <ul>
         {
           INTRO_ROUTES.map((route) => 
             <Link key={route[0]} to={route[1]} className={currentRoute === route[1] ? 'current-route' : undefined}>
-              <li>{route[0]}</li>
+              <li><span>{route[0]}</span></li>
             </Link>
           )
         }
@@ -49,7 +53,7 @@ function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.Rea
         {
           componentsList.map((c) => 
             <Link key={c.path} to={c.path} className={currentRoute === c.path ? 'current-route' : undefined}>
-              <li>{c.name}</li>
+              <li><span>{c.name}</span></li>
             </Link>
           )
         }
