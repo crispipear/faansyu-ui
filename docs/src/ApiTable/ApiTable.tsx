@@ -1,13 +1,7 @@
 import React from 'react'
 import { Header, Table, ITableColumn } from 'faanshu-ui'
+import { IApiItem } from './ApiTable.utils';
 import './ApiTable.css';
-
-export interface IApiItem {
-  property: string
-  type: React.ReactNode
-  description: React.ReactNode
-  default?: string | number 
-}
 
 const columns: ITableColumn<IApiItem>[] = [
   {
