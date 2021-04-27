@@ -2,19 +2,26 @@
 
 Set the theme of your ui with the theme provider. Pick from faanshu-ui preset themes or customize your own palette.
 
-## Usage
-```
-import { FsThemeProvider } from 'faanshu-ui'
+## Prerequisite
 
-const App = () => {
-  return (
-    <FsThemeProvider>
-      <h1>Hello from faanshu-ui!</h1>
-    </FsThemeProvider>
-  )
-}
-```
+Make sure you have wrapped your app in the faanshu-ui provider.
 
-## Color variants and shades
-There are 8 types of color variants we use in a theme. Each variant has 3 different shades: **main**, **light**, **dark**.
-The shades light and dark are generated based on the provided main value. They can also be customized.
+See: [Getting started](./getting-started).
+
+## Preset themes
+
+## Customized theme
+
+## Color system
+faanshu-ui theme colors help contextualizing colors for your UI to create hierachy and express branding.
+
+### Variants
+There are 8 types of color variants we use in a theme. 
+
+See type: [Variant](./overview#Variant)
+
+### Shades
+Each color variant has 3 different shades: **main**, **light**, **dark**. These shades will apply to the UI components for extensive styling.
+By default, the shades **light** and **dark** are generated based on the provided **main** value.
+
+See type: [Shade](./overview#Shade)

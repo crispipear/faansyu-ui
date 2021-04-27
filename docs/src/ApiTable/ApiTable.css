@@ -12,10 +12,11 @@
 }
 
 .api-table code{
+  line-height: 1.2;
   border-radius: 4px;
   padding: 0.2rem 0.4rem;
   color: #356068;
   font-weight: 500;
-  background-color: #e4f0f2;
+  background-color: #ebf3f5;
   display: inline-block;
 }

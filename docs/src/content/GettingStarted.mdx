@@ -7,6 +7,19 @@
 <pre class="code-line">yarn add faanshu-ui</pre>
 
 ## Usage
+Wrap your app with the faanshu-ui provider, this ensures the ui components render with consistent styles.
+```
+import { FsProvider } from 'faanshu-ui';
+
+const App = () => {
+  return (
+      <FsProvider>
+        <MyApp />
+      </FsProvider>
+  )
+}
+```
+Use faanshu-ui components anywhere in your app.
 ```
 import { Header } from 'faanshu-ui';
 

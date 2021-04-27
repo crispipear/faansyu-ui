@@ -64,7 +64,7 @@ export const rounded = ({componentName}: apiHelperProps):IApiItem => ({
 
 export const variant = ({componentName}: apiHelperProps):IApiItem => ({
   property: "variant",
-  type: <a href="/overview">variant</a>,
+  type: <a href="/overview#Variant">Variant</a>,
   description: `Set the color variant of the ${componentName}`,
   default: "primary"
 })

@@ -6,7 +6,7 @@ import './Nav.css';
 const INTRO_ROUTES = [
   ['About', '/'],
   ['Getting started', '/getting-started'],
-  ['Theming', '/theming']
+  ['Theme and styling', '/theme-and-styling']
 ]
 
 interface ComponentListItem {
@@ -29,8 +29,8 @@ function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.Rea
         <div className="nav-logo"/>
         <div>
           <Link to="/">
-            <Header fontSize="m" style={{margin: 0}}>
-              faanshu ui
+            <Header fontSize="m" style={{margin: 0, lineHeight: 1}}>
+                faanshu ui
             </Header>
           </Link>
           <Text color="primary" fontSize="xxs">

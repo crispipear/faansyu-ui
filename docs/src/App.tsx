@@ -1,70 +1,57 @@
 import React from 'react'
-import { FsThemeProvider } from 'faanshu-ui'
+import { 
+  FsProvider,
+  Header,
+  HeaderProps,
+  Paragraph,
+} from 'faanshu-ui'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import Nav from './Nav';
+import { MDXProvider } from '@mdx-js/react';
 import {
   About,
   GettingStarted,
   Theming,
-  Overview,
-  //components
-  Table,
-  Tag,
-  Button,
-  Typography
 } from './content';
-import Nav from './Nav';
+import CodeSnippet from './Demo/CodeSnippet';
+import ROUTES from './routes';
 
-const COMPONENTS_LIST = [
-  {
-    name: 'Overview',
-    path: '/overview',
-    component: Overview
-  },
-  {
-    name: 'Button',
-    path: '/button',
-    component: Button
-  },
-  {
-    name: 'Table',
-    path: '/table',
-    component: Table
-  },
-  {
-    name: 'Tag',
-    path: '/tag',
-    component: Tag
-  },
-  {
-    name: 'Typograhpy',
-    path: '/typography',
-    component: Typography
-  },
-]
-
-const COMPONENT_ROUTES = COMPONENTS_LIST.map(
+const COMPONENT_ROUTES = ROUTES.map(
   (item) => <Route path={item.path} key={item.path} component={item.component}/>
 )
 
+const components = {
+  h1: Header,
+  h2: (props: HeaderProps) => <Header tag="h2" {...props} />,
+  h3: (props: HeaderProps) => <Header tag="h3" {...props} />,
+  h4: (props: HeaderProps) => <Header tag="h4" {...props} />,
+  h5: (props: HeaderProps) => <Header tag="h5" {...props} />,
+  h6: (props: HeaderProps) => <Header tag="h6" {...props} />,
+  p: Paragraph,
+  code: (props: any) => <CodeSnippet code={props.children} {...props} />,
+}
+
 const App = () => {
   return (
-    <FsThemeProvider>
-      <Router>
-        <Nav componentsList={COMPONENTS_LIST}/>
-        <main className="main">
-          <Switch>
-            <Route exact path='/' component={About} />
-            <Route path='/getting-started' component={GettingStarted} />
-            <Route path='/theming' component={Theming} />
-            {COMPONENT_ROUTES}
-          </Switch>
-        </main>
-      </Router>
-    </FsThemeProvider>
+    <MDXProvider components={components}>
+      <FsProvider>
+        <Router>
+          <Nav componentsList={ROUTES}/>
+          <main className="main">
+            <Switch>
+              <Route exact path='/' component={About} />
+              <Route path='/getting-started' component={GettingStarted} />
+              <Route path='/theme-and-styling' component={Theming} />
+              {COMPONENT_ROUTES}
+            </Switch>
+          </main>
+        </Router>
+      </FsProvider>
+    </MDXProvider>
   )
 }
 

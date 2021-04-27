@@ -11,29 +11,32 @@ import {
 } from '../../utils/cssUtils'
 
 export interface ButtonProps extends BaseComponentProps {
-  clear?: boolean
-  disabled?: boolean
-  light?: boolean
-  isLoading?: boolean
-  outlined?: boolean
-  rounded?: boolean
-  variant?: VariantTypes
-  onClick?: React.MouseEventHandler<HTMLElement>
+  clear?: boolean;
+  disabled?: boolean;
+  external?: boolean;
+  href?: string;
+  light?: boolean;
+  isLoading?: boolean;
+  outlined?: boolean;
+  rounded?: boolean;
+  target?: string;
+  variant?: VariantTypes;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 const StyledButton = styled.button<ButtonProps>((props) => {
   const { colors, spacing, fontSize, borderRadius } = props.theme
   const { clear, disabled, light, isLoading, outlined, rounded } = props
   const variant = disabled ? 'disabled' : props.variant || 'primary'
-  const cursor = disabled ? 'not-allowed' : isLoading ? 'progress' : 'pointer'
+  const cursor = disabled ? 'not-allowed' : isLoading ? 'default' : 'pointer'
 
   return {
-    cursor,
-    position: 'relative',
-    outline: 'none',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
+    outline: 'none',
+    cursor,
+    position: 'relative',
     lineHeight: 1,
     borderWidth: '1px',
     borderStyle: 'solid',
@@ -44,6 +47,7 @@ const StyledButton = styled.button<ButtonProps>((props) => {
     padding: `${spacing.xs} ${spacing.s}`,
     fontSize: fontSize.s,
     fontWeight: 500,
+    textDecoration: 'none',
     transition: 'all 0.16s',
     ...(!disabled &&
       !isLoading && {
@@ -63,6 +67,9 @@ const StyledButton = styled.button<ButtonProps>((props) => {
 
 export function Button({
   children,
+  external,
+  href,
+  target,
   onClick,
   ...restProps
 }: ButtonProps): React.ReactElement {
@@ -72,7 +79,13 @@ export function Button({
     }
   }
   return (
-    <StyledButton onClick={handleClick} {...restProps}>
+    <StyledButton
+      onClick={handleClick}
+      {...restProps}
+      as={href ? 'a' : 'button'}
+      href={href}
+      target={external ? '_blank' : target}
+    >
       {restProps.isLoading && (
         <Loader
           clear={restProps.clear || restProps.outlined}

@@ -1,7 +1,7 @@
 {
   "name": "faanshu-ui",
   "version": "0.0.0",
-  "description": "Simple, modern react ui kit",
+  "description": "Simple React ui kit",
   "author": "Su Li <lisuy97@gmail.com>",
   "license": "MIT",
   "repository": "crispipear/faanshu-ui",
@@ -36,8 +36,8 @@
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
     "@types/styled-components": "^5.1.4",
-    "@typescript-eslint/eslint-plugin": "v4.1.0",
-    "@typescript-eslint/parser": "^v4.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^7.11.0",
@@ -62,5 +62,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "styled-components": "^5.2.3"
+  }
 }

@@ -1,4 +1,4 @@
-export { default as FsThemeProvider } from './theme'
+export * from './theme'
 export * from './fs.types'
 export * from './components/Button'
 export * from './components/Divider'

@@ -27,3 +27,8 @@ code, pre {
 p{
   margin-top: 0;
 }
+
+.code-line {
+  padding: 0.92rem 1.6rem;
+  background-color: rgb(248, 248, 248);
+}

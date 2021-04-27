@@ -19,19 +19,20 @@ export type ColorItem = Record<ShadeTypes, string>
 export type ColorsHex = Partial<Record<VariantTypes, string>>
 
 export type Colors = Record<VariantTypes, ColorItem> & {
-  hex?: ColorsHex
+  hex?: ColorsHex;
 }
 
 export type Sizes = Record<SizeTypes, string>
 
 export interface FsTheme {
-  fontSize: Sizes
-  borderRadius: string
-  spacing: Sizes
-  colors: Colors
+  fontSize: Sizes;
+  borderRadius: string;
+  spacing: Sizes;
+  colors: Colors;
 }
 
 export type BaseComponentProps = React.PropsWithChildren<{
-  className?: string
-  style?: React.CSSProperties
+  className?: string;
+  id?: string;
+  style?: React.CSSProperties;
 }>

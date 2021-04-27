@@ -40,8 +40,8 @@ const StyledTable = styled.div<TableStyleProps>((props) => {
 })
 
 export function Table<T>({
-  columns,
-  data,
+  columns = [],
+  data = [],
   ...restProps
 }: TableProps<T>): React.ReactElement {
   const tableHeaders = React.useMemo<React.ReactNode>(() => {

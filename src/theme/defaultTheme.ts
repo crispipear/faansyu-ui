@@ -3,10 +3,10 @@ import { FsTheme } from '../fs.types'
 const defaultTheme: FsTheme = {
   borderRadius: '25px',
   fontSize: {
-    xxl: '4rem',
-    xl: '3.2rem',
-    l: '2.4rem',
-    m: '1.4rem',
+    xxl: '3.2rem',
+    xl: '2.4rem',
+    l: '2rem',
+    m: '1.2rem',
     s: '0.96rem',
     xs: '0.84rem',
     xxs: '0.76rem'
