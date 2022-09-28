@@ -7,11 +7,6 @@ enum COMPONENTS {
 }
 
 export const HeaderApi: IApiItem[] = [
-  {
-    property: "anchorText",
-    type: "string",
-    description: "Set the id to use as a link anchor",
-  },
   typeColor({componentName: COMPONENTS.HEADER}),
   fontSize({componentName: COMPONENTS.HEADER}),
   {

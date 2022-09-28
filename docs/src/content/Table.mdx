@@ -1,5 +1,5 @@
 import Demo, { createCodeString } from '../Demo';
-import { Table, ITableColumn } from 'faanshu-ui'
+import { Header, Table, ITableColumn } from 'faanshu-ui'
 import { ApiTable } from '../ApiTable'
 import { TableApi, ColumnApi } from './Table.api';
 
@@ -71,6 +71,6 @@ Table displays data into columns and rows. Users can easily compare and analyze 
   <Table data={data} columns={columns} striped={true} />
 </Demo>
 
-## API
+<Header anchor as="h2">API</Header>
 <ApiTable api={TableApi} />
 <ApiTable api={ColumnApi} header="Column" />

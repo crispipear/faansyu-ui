@@ -13,14 +13,15 @@ body {
 code, pre {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  font-size: 0.84rem;
 }
 
 .main {
   box-sizing: border-box;
-  padding: 2.4rem;
-  margin: 4% calc(4% + 240px);
+  padding: 1.6rem 2.4rem;
+  margin: 2% 0 2% calc(2% + 220px);
   background-color: white;
-  width: calc(92% - 240px);
+  width: calc(75% - 220px);
   box-shadow: 0 0 20px 0px rgb(95, 106, 183, 0.1);
 }
 

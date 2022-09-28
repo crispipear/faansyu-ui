@@ -18,13 +18,11 @@ interface ComponentListItem {
 function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.ReactElement {
   const location = useLocation();
 
-  const currentRoute = React.useMemo<string>(() => {
-    return location.pathname
-  }, [location])
+  const currentRoute = location.pathname;
 
 
   return (
-    <nav className="nav">
+    <div className="main-nav">
       <div className="nav-title">
         <div className="nav-logo"/>
         <div>
@@ -33,12 +31,12 @@ function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.Rea
                 faanshu ui
             </Header>
           </Link>
-          <Text color="primary" fontSize="xxs">
+          <Text color="secondary" fontSize="xxs">
             version: v0.0.0
           </Text>
         </div>
       </div>
-      <Divider />
+      <Divider style={{marginBottom: 0}} />
       <ul>
         {
           INTRO_ROUTES.map((route) => 
@@ -48,7 +46,7 @@ function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.Rea
           )
         }
       </ul>
-      <Divider />
+      <Divider style={{marginTop: 0}} />
       <ul>
         {
           componentsList.map((c) => 
@@ -59,7 +57,7 @@ function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.Rea
         }
       </ul>
       
-    </nav>
+    </div>
   )
 }
 

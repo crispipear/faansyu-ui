@@ -45,7 +45,7 @@ const ButtonPage = () => {
         <li>Dangerous action that needs warning</li>
         <li>Disabled action indicating exisitng action is not available</li>
       </ul>
-      <Header fontSize="m">Styles</Header>
+      <Header fontSize="m" anchor>Styles</Header>
       <Demo
         code={
           createCodeString({

@@ -1,5 +1,5 @@
 import Demo, {createCodeString} from '../Demo';
-import { Tag } from 'faanshu-ui'
+import { Header, Tag } from 'faanshu-ui'
 import { ApiTable } from '../ApiTable'
 import { TagApi } from './Tag.api';
 
@@ -29,7 +29,7 @@ Use Tags when content is mapped to multiple categories, and the user needs a way
     <Tag variant="secondary">example 1</Tag>
 </Demo>
 
-## Alternative styles
+<Header anchor as="h2">Styles</Header>
 <Demo code={createCodeString({component: "Tag", used: ["Tag"], render: CODE_ALT})} spacer={true}>
     <Tag>Primary</Tag>
     <Tag variant="secondary" outlined>Secondary</Tag>
@@ -38,5 +38,5 @@ Use Tags when content is mapped to multiple categories, and the user needs a way
     <Tag variant="warning" rounded outlined>Warning</Tag>
 </Demo>
 
-## API
+<Header anchor as="h2">API</Header>
 <ApiTable api={TagApi} />

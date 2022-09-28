@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SizeTypes, VariantTypes, BaseComponentProps } from '../../fs.types'
+import { Size, Variant, BaseComponentProps } from '../../fs.types'
 
 export interface ParagraphProps extends BaseComponentProps {
-  fontSize?: SizeTypes
-  color?: VariantTypes
+  fontSize?: Size;
+  color?: Variant;
 }
 
 const StyledParagraph = styled.p<ParagraphProps>((props) => {

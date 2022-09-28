@@ -2,24 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 import {
   Sizes,
-  SizeTypes,
-  VariantTypes,
+  Size,
+  Variant,
   BaseComponentProps
 } from '../../fs.types'
 
 export interface HeaderProps extends BaseComponentProps {
-  fontSize?: SizeTypes;
-  color?: VariantTypes;
+  fontSize?: Size;
+  color?: Variant;
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  anchorText?: string;
 }
 
-const getMargins = (spacing: Sizes, fontSize: SizeTypes): string => {
+const getMargins = (spacing: Sizes, fontSize: Size): string => {
   switch (fontSize) {
     case 'xxs':
     case 'xs':
     case 's':
-      return `${spacing.m} 0 ${spacing.xs} 0`
+      return `${spacing.s} 0 ${spacing.xs} 0`
     default:
       return `${spacing.m} 0 ${spacing.s} 0`
   }
@@ -42,11 +41,24 @@ const StyledHeader = styled.div<HeaderProps>((props) => {
 export function Header({
   children,
   tag = 'h1',
-  anchorText,
+  anchor,
+  className,
   ...restProps
 }: HeaderProps): React.ReactElement {
+  const anchorProps = anchor ? {
+    id: children?.toString().replace(/\s/g, '')
+  } : {};
+
+  const classNamesWithAnchor = className ? `${className} anchor` : 'anchor';
+  const classNames = anchor ? classNamesWithAnchor : className;
+
   return (
-    <StyledHeader as={tag} id={anchorText} {...restProps}>
+    <StyledHeader
+      as={tag}
+      className={classNames}
+      {...anchorProps}
+      {...restProps}
+    >
       {children}
     </StyledHeader>
   )

@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IconNames, IconSizes } from './Icon.types'
-import { VariantTypes, BaseComponentProps } from '../../fs.types'
+import { Variant, BaseComponentProps } from '../../fs.types'
 import Directory from './iconsDirectory'
 
 export interface IconProps extends BaseComponentProps {
-  name?: IconNames
-  variant?: VariantTypes
-  size?: IconSizes
+  name?: IconNames;
+  variant?: Variant;
+  size?: IconSizes;
 }
 
 const StyledIcon = styled.span<IconProps>((props) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SizeTypes } from 'faanshu-ui';
+import { Size } from 'faanshu-ui';
 
 export interface IApiItem {
   property: React.ReactNode
@@ -41,7 +41,7 @@ export const light = ({componentName}: apiHelperProps):IApiItem => ({
   default: "false"
 })
 
-export const fontSize = ({componentName, defaultSize}: apiHelperProps & {defaultSize?: SizeTypes}):IApiItem => ({
+export const fontSize = ({componentName, defaultSize}: apiHelperProps & {defaultSize?: Size}):IApiItem => ({
   property: "fontSize",
   type: <a href="/overview">FontSize</a>,
   description: `Set the font size of ${componentName}`,

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { VariantTypes, BaseComponentProps } from '../../fs.types'
+import { Variant, BaseComponentProps } from '../../fs.types'
 import { Loader } from '../Loader'
 import {
   textColor,
@@ -20,7 +20,7 @@ export interface ButtonProps extends BaseComponentProps {
   outlined?: boolean;
   rounded?: boolean;
   target?: string;
-  variant?: VariantTypes;
+  variant?: Variant;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 

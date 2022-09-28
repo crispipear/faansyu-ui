@@ -1,5 +1,5 @@
 import Demo, { createCodeString } from '../Demo';
-import { Button, IconButton } from 'faanshu-ui'
+import { Header, Button, IconButton } from 'faanshu-ui'
 import { ButtonApi, IconButtonApi } from './Button.api'
 import { ApiTable } from '../ApiTable'
 
@@ -41,7 +41,7 @@ Make sure the button design provides visual contexts that differenciate these po
 - Dangerous action that needs warning
 - Disabled action indicating exisitng action is not available
 
-## Basic button styles
+<Header anchor as="h2">Basic Button styles</Header>
 <Demo
   code={
     createCodeString({
@@ -61,7 +61,7 @@ Make sure the button design provides visual contexts that differenciate these po
   <Button clear>Clear button</Button>
 </Demo>
 
-## Link button
+<Header anchor as="h2">Link Button</Header>
 Use `href` to define a url for the button that directs the user to an internal/external link.
 
 <Demo
@@ -78,7 +78,7 @@ Use `href` to define a url for the button that directs the user to an internal/e
   <Button href="https://reactjs.org" outlined>External link</Button>
 </Demo>
 
-## Loading button
+<Header anchor as="h2">Loading Button</Header>
 <Demo
   code={
     createCodeString({
@@ -95,7 +95,7 @@ Use `href` to define a url for the button that directs the user to an internal/e
 </Demo>
 
 
-## Disabled button
+<Header anchor as="h2">Disabled Button</Header>
 <Demo
   code={
     createCodeString({
@@ -111,7 +111,7 @@ Use `href` to define a url for the button that directs the user to an internal/e
   <Button disabled outlined>Disabled 3</Button>
 </Demo>
 
-## Icon button
+<Header anchor as="h2">Icon Button</Header>
 Enables simple, intuitive action with minimal visual context.
 <Demo
   code={
@@ -130,6 +130,6 @@ Enables simple, intuitive action with minimal visual context.
   <IconButton name="copy" variant="warning" outlined/>
 </Demo>
 
-## API
+<Header anchor as="h2">API</Header>
 <ApiTable header="Button" api={ButtonApi} />
-<ApiTable header='Icon button (Omit <ButtonProps, "rounded">)' api={IconButtonApi} />
+<ApiTable header='Icon button' api={IconButtonApi} />

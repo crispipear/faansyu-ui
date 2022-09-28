@@ -47,7 +47,7 @@ export function ApiTable({api, header}: {api: IApiItem[], header?: string}): Rea
 
   return (
     <>
-      {header && <Header tag="h3" id={header} color="primary">{header}</Header>}
+      {header && <Header tag="h3" anchor color="primary">{header}</Header>}
       <Table
         className="api-table"
         data={sortedApi}

@@ -1,12 +1,12 @@
 import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
-import { VariantTypes, BaseComponentProps } from '../../fs.types'
+import { Variant, BaseComponentProps } from '../../fs.types'
 import { textColor } from '../../utils/cssUtils'
 
 export interface LoaderProps extends BaseComponentProps {
-  variant?: VariantTypes
-  light?: boolean
-  clear?: boolean
+  variant?: Variant;
+  light?: boolean;
+  clear?: boolean;
 }
 
 const SpinAnimation = keyframes`  

@@ -10,7 +10,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Nav from './Nav';
+import { Nav, TopicsNav } from './Nav';
 import { MDXProvider } from '@mdx-js/react';
 import {
   About,
@@ -41,7 +41,7 @@ const App = () => {
       <FsProvider>
         <Router>
           <Nav componentsList={ROUTES}/>
-          <main className="main">
+          <main className="main" id="main-content">
             <Switch>
               <Route exact path='/' component={About} />
               <Route path='/getting-started' component={GettingStarted} />
@@ -49,6 +49,7 @@ const App = () => {
               {COMPONENT_ROUTES}
             </Switch>
           </main>
+          <TopicsNav />
         </Router>
       </FsProvider>
     </MDXProvider>

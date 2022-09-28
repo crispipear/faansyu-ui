@@ -1,13 +1,13 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { VariantTypes, BaseComponentProps } from '../../fs.types'
+import { Variant, BaseComponentProps } from '../../fs.types'
 import { textColor, borderColor, backgroundColor } from '../../utils/cssUtils'
 
 export interface TagProps extends BaseComponentProps {
-  light?: boolean
-  variant?: VariantTypes
-  outlined?: boolean
-  rounded?: boolean
+  light?: boolean;
+  variant?: Variant;
+  outlined?: boolean;
+  rounded?: boolean;
 }
 
 const StyledTag = styled.span<TagProps>((props) => {

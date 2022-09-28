@@ -1,10 +1,12 @@
-export type Primitive = string | number | symbol | boolean
+export type Primitive = string | number | symbol | boolean;
 
-export type ShadeTypes = 'light' | 'main' | 'dark'
+export type Shade = 'light' | 'main' | 'dark';
 
-export type SizeTypes = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
+export type Size = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
 
-export type VariantTypes =
+export type FontWeight = 'normal' | 'bold' | number;
+
+export type Variant =
   | 'primary'
   | 'secondary'
   | 'success'
@@ -12,17 +14,17 @@ export type VariantTypes =
   | 'warning'
   | 'disabled'
   | 'text'
-  | 'border'
+  | 'border';
 
-export type ColorItem = Record<ShadeTypes, string>
+export type ColorItem = Record<Shade, string>;
 
-export type ColorsHex = Partial<Record<VariantTypes, string>>
+export type ColorsHex = Partial<Record<Variant, string>>;
 
-export type Colors = Record<VariantTypes, ColorItem> & {
+export type Colors = Record<Variant, ColorItem> & {
   hex?: ColorsHex;
 }
 
-export type Sizes = Record<SizeTypes, string>
+export type Sizes = Record<Size, string>;
 
 export interface FsTheme {
   fontSize: Sizes;
@@ -35,4 +37,5 @@ export type BaseComponentProps = React.PropsWithChildren<{
   className?: string;
   id?: string;
   style?: React.CSSProperties;
+  anchor?: boolean;
 }>

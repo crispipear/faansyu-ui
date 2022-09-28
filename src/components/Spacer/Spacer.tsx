@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BaseComponentProps, SizeTypes } from '../../fs.types'
+import { BaseComponentProps, Size } from '../../fs.types'
 import { toArray } from '../../utils/toArray'
 export interface SpacerProps extends BaseComponentProps {
-  gap?: SizeTypes
+  gap?: Size
   direction?: 'column' | 'row'
 }
 
