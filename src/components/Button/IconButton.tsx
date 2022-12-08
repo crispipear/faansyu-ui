@@ -64,7 +64,7 @@ export function IconButton({
   onClick,
   ...restProps
 }: IconButtonProps): React.ReactElement {
-  function handleClick(e: React.MouseEvent<HTMLElement>): void {
+  function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
     if (onClick) {
       onClick(e)
     }

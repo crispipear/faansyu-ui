@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Table, ITableColumn } from 'faanshu-ui'
+import { Header, Table, ITableColumn } from 'faansyu-ui'
 import './ApiTable.css';
 import {IApiItem} from './ApiTable.utils';
 

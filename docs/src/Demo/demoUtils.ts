@@ -30,7 +30,7 @@ function stringifyConfigItems(configs: {
 export function createCodeString({component, used, configs, render}: ICreateCodeString): string {
 return`
 import React from 'react'
-import { ${used?.join(",")} } from 'faanshu-ui'
+import { ${used?.join(",")} } from 'faansyu-ui'
 ${
   configs ?
   stringifyConfigItems(configs)

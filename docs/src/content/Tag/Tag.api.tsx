@@ -1,4 +1,4 @@
-import { IApiItem, light, outlined, rounded, variant } from "../ApiTable"
+import { IApiItem, light, outlined, rounded, variant } from "../../ApiTable"
 
 const componentName = 'Tag';
 

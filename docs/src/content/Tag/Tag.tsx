@@ -1,6 +1,8 @@
 import React from 'react'
 import Demo, {createCodeString} from '../../Demo';
-import { Header, Tag, Paragraph } from 'faanshu-ui'
+import { Header, Tag, Paragraph } from 'faansyu-ui'
+import { ApiTable } from '../../ApiTable'
+import { TagApi } from './Tag.api';
 
 const CODE =
 `
@@ -39,6 +41,8 @@ const TagPage = () => {
           <Tag variant="info" light={false}>Info</Tag>
           <Tag variant="warning" rounded outlined>Warning</Tag>
       </Demo>
+      <Header anchor tag="h2">API</Header>
+      <ApiTable api={TagApi} />
     </div>
   )
 }

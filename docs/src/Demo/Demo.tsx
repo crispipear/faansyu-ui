@@ -1,7 +1,7 @@
 import React from 'react';
 import CodeSnippet from './CodeSnippet';
 import './Demo.css';
-import { IconButton, Spacer, SpacerProps } from 'faanshu-ui'
+import { IconButton, Spacer, SpacerProps } from 'faansyu-ui'
 
 interface Props {
   code: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Size } from 'faanshu-ui';
+import { Size } from 'faansyu-ui';
 
 export interface IApiItem {
   property: React.ReactNode

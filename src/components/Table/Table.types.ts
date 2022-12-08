@@ -13,7 +13,10 @@ export interface TableStyleProps {
   striped?: boolean;
 }
 
-export interface TableProps<T> extends TableStyleProps, BaseComponentProps {
+export interface TableProps<T> extends
+  React.TableHTMLAttributes<HTMLTableElement>,
+  TableStyleProps,
+  BaseComponentProps {
   data: Array<T>;
   columns: ITableColumn<T>[];
 }

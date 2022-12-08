@@ -1,10 +1,10 @@
 import React from 'react'
 import Demo, { createCodeString } from '../../Demo';
-import { Button, IconButton, Header, Paragraph } from 'faanshu-ui'
-import {ButtonApi, IconButtonApi} from './Button.api'
-import {ApiTable} from '../../ApiTable'
+import { Header, Button, IconButton, Paragraph } from 'faansyu-ui';
+import { ButtonApi, IconButtonApi } from './Button.api';
+import { ApiTable } from '../../ApiTable';
 
-const CODE_BASIC =
+export const CODE_BASIC =
 `<Button>Primary button</Button>
       <Button variant="secondary" light>Secondary</Button>
       <Button variant="secondary" outlined>Outlined</Button>
@@ -12,23 +12,27 @@ const CODE_BASIC =
       <Button variant="warning" rounded outlined>Warning</Button>
       <Button variant="info" rounded light>Info</Button>
       <Button clear>Clear button</Button>`
-const CODE_STATES =
+export const CODE_STATE_LOADING = 
 `<Button isLoading>Loading</Button>
       <Button isLoading light>Loading 2</Button>
-      <Button isLoading outlined>Loading 3</Button>
-      <Button disabled>Disabled</Button>
-      <Button disabled light>Disabled 2</Button>
-      <Button disabled outlined>Disabled 3</Button>`
-const CODE_ICON =
+      <Button isLoading outlined>Loading 3</Button>`
+export const CODE_STATE_DISABLED = 
+`<Button isLoading>Loading</Button>
+      <Button isLoading light>Loading 2</Button>
+      <Button isLoading outlined>Loading 3</Button>`
+export const CODE_LINK =
+`<Button href="./#" clear>Internal link</Button>
+      <Button href="https://reactjs.org" outline>External link</Button>`
+export const CODE_ICON =
 `<IconButton name="copy" />
       <IconButton name="copy" variant="text"/>
       <IconButton name="copy" clear={false}/>
       <IconButton name="copy" variant="secondary" light/>
       <IconButton name="copy" variant="warning" outlined/>`
 
-const ButtonPage = () => {
+const ButtonDoc = () => {
   return (
-    <div>
+    <>
       <Header>Button</Header>
       <Paragraph>
         Components that show short label or keyword that describe item(s).
@@ -37,15 +41,25 @@ const ButtonPage = () => {
       <Paragraph>
         These button style props can be mix and matched for diffrent project designs.
         Make sure the button design provides visual contexts that differenciate these possible type of actions:
+        <ul>
+          <li>
+            Main action with most priority  
+          </li>
+          <li>
+            Secondary actions with no priorities
+          </li>
+          <li>
+            Action directing the user to an internal or external link
+          </li>
+          <li>
+            Dangerous action that needs warning
+          </li>
+          <li>
+            Disabled action indicating exisitng action is not available
+          </li>
+        </ul>
       </Paragraph>
-      <ul>
-        <li>Main action with most priority</li>
-        <li>Secondary actions with no priorities</li>
-        <li>Action directing the user to an internal or external link</li>
-        <li>Dangerous action that needs warning</li>
-        <li>Disabled action indicating exisitng action is not available</li>
-      </ul>
-      <Header fontSize="m" anchor>Styles</Header>
+      <Header anchor tag="h2">Basic Button styles</Header>
       <Demo
         code={
           createCodeString({
@@ -64,13 +78,31 @@ const ButtonPage = () => {
         <Button variant="info" rounded light>Info</Button>
         <Button clear>Clear button</Button>
       </Demo>
-      <Header fontSize="m">Other states</Header>
+
+      <Header anchor tag="h2">Link Button</Header>
+      Use <code>href</code> to define a url for the button that directs the user to an internal/external link.
+
       <Demo
         code={
           createCodeString({
             component: "Button",
             used: ["Button"],
-            render: CODE_STATES
+            render: CODE_LINK
+          })
+        }
+        spacer={true}
+      >
+        <Button href="./#" clear>Internal link</Button>
+        <Button href="https://reactjs.org" outlined>External link</Button>
+      </Demo>
+
+      <Header anchor tag="h2">Loading Button</Header>
+      <Demo
+        code={
+          createCodeString({
+            component: "Button",
+            used: ["Button"],
+            render: CODE_STATE_LOADING
           })
         }
         spacer={true}
@@ -78,14 +110,27 @@ const ButtonPage = () => {
         <Button isLoading>Loading</Button>
         <Button isLoading light>Loading 2</Button>
         <Button isLoading outlined>Loading 3</Button>
+      </Demo>
+
+
+      <Header anchor tag="h2">Disabled Button</Header>
+      <Demo
+        code={
+          createCodeString({
+            component: "Button",
+            used: ["Button"],
+            render: CODE_STATE_DISABLED
+          })
+        }
+        spacer={true}
+      >
         <Button disabled>Disabled</Button>
         <Button disabled light>Disabled 2</Button>
         <Button disabled outlined>Disabled 3</Button>
       </Demo>
-      <Header fontSize="m">Icon button</Header>
-      <Paragraph>
-        Enables simple, intuitive action with minimal visual context.
-      </Paragraph>
+
+      <Header anchor tag="h2">Icon Button</Header>
+      Enables simple, intuitive action with minimal visual context.
       <Demo
         code={
           createCodeString({
@@ -97,16 +142,17 @@ const ButtonPage = () => {
         spacer={true}
       >
         <IconButton name="copy" />
-        <IconButton name="copy" variant="text"/>
-        <IconButton name="copy" clear={false}/>
-        <IconButton name="copy" variant="secondary" light/>
-        <IconButton name="copy" variant="warning" outlined/>
+        <IconButton name="copy" variant="text" />
+        <IconButton name="copy" clear={false} />
+        <IconButton name="copy" variant="secondary" light />
+        <IconButton name="copy" variant="warning" outlined />
       </Demo>
-      <Header fontSize="m">API</Header>
-      <ApiTable header="ButtonProps" api={ButtonApi} />
-      <ApiTable header='IconButtonProps (Omit <ButtonProps, "rounded">)' api={IconButtonApi} />
-    </div>
+
+      <Header anchor tag="h2">API</Header>
+      <ApiTable header="Button" api={ButtonApi} />
+      <ApiTable header='Icon button' api={IconButtonApi} />
+    </>
   )
 }
 
-export default ButtonPage
+export default ButtonDoc;

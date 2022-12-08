@@ -1,18 +1,21 @@
 import React from 'react';
 import { Link, useLocation } from "react-router-dom";
-import { Header, Text, Divider } from 'faanshu-ui'
+import { Header, Text, Divider } from 'faansyu-ui'
 import './Nav.css';
 
+// @ts-ignore: Unreachable code error
+var pjson = require('../../package.json');
+
 const INTRO_ROUTES = [
-  ['About', '/'],
   ['Getting started', '/getting-started'],
-  ['Theme and styling', '/theme-and-styling']
+  ['Theme and styling', '/theme-and-styling'],
+  ['About', '/']
 ]
 
 interface ComponentListItem {
   path: string
   name: string
-  component: React.ReactNode
+  element: React.ReactNode
 }
 
 function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.ReactElement {
@@ -28,11 +31,11 @@ function Nav({componentsList}: {componentsList: ComponentListItem[]}): React.Rea
         <div>
           <Link to="/">
             <Header fontSize="m" style={{margin: 0, lineHeight: 1}}>
-                faanshu ui
+                faansyu ui
             </Header>
           </Link>
           <Text color="secondary" fontSize="xxs">
-            version: v0.0.0
+            version: v{pjson.version}
           </Text>
         </div>
       </div>

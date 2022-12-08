@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Overview,
   //components
@@ -7,30 +8,32 @@ import {
   Typography
 } from './content';
 
-export default [
+const ROUTES = [
   {
     name: 'Overview',
     path: '/overview',
-    component: Overview
+    element: <Overview />
   },
   {
     name: 'Button',
     path: '/button',
-    component: Button
+    element: <Button />
   },
   {
     name: 'Table',
     path: '/table',
-    component: Table
+    element: <Table />
   },
   {
     name: 'Tag',
     path: '/tag',
-    component: Tag
+    element: <Tag />
   },
   {
     name: 'Typograhpy',
     path: '/typography',
-    component: Typography
+    element: <Typography />
   },
 ]
+
+export default ROUTES;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
-import { Text, Divider } from 'faanshu-ui'
+import { Text, Divider } from 'faansyu-ui'
 import './TopicsNav.css';
 
 function TopicsNav(): React.ReactElement {
@@ -23,7 +23,7 @@ function TopicsNav(): React.ReactElement {
     const links = Array.from(headings).map(h => {
       const href = `#${h.id}`;
       return (
-        <li>
+        <li key={h.id}>
           <a className="topics-link" href={href}>
             {h.innerHTML}
           </a>

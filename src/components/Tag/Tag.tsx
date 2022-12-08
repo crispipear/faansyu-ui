@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import { Variant, BaseComponentProps } from '../../fs.types'
 import { textColor, borderColor, backgroundColor } from '../../utils/cssUtils'
 
-export interface TagProps extends BaseComponentProps {
+export interface TagProps extends
+React.HTMLAttributes<HTMLSpanElement>,
+BaseComponentProps {
   light?: boolean;
   variant?: Variant;
   outlined?: boolean;

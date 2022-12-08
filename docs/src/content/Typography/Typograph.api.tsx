@@ -1,4 +1,4 @@
-import { IApiItem, fontSize, typeColor } from "../ApiTable"
+import { IApiItem, fontSize, typeColor } from "../../ApiTable"
 
 enum COMPONENTS {
   HEADER = "Header",

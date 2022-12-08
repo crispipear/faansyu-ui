@@ -1,60 +1,38 @@
 import React from 'react'
-import {IApiItem} from "../../ApiTable"
+import {
+  IApiItem,
+  clear,
+  disabled,
+  isLoading,
+  light,
+  onClick,
+  outlined,
+  rounded,
+  variant
+} from "../../ApiTable"
+
+const componentName = 'Button';
 
 export const ButtonApi: IApiItem[] = [
+  light({componentName}),
+  clear({componentName}),
+  disabled({componentName}),
+  isLoading({componentName}),
+  onClick(),
+  outlined({componentName}),
+  rounded({componentName}),
+  variant({componentName}),
   {
-    property: "clear",
+    property: "external",
     type: "boolean",
-    description: "Set the button background to be transparent",
+    description: <>Opens link in a new window (if <code>href</code> is defined)</>,
     default: "false"
   },
   {
-    property: "disabled",
-    type: "boolean",
-    description: "Set the button state to be disabled",
-    default: "false"
+    property: "href",
+    type: "string",
+    description: "Set the url for the link button",
   },
-  {
-    property: "light",
-    type: "boolean",
-    description: "Set the button background to be light colored",
-    default: "false"
-  },
-  {
-    property: "isLoading",
-    type: "boolean",
-    description: "Set the button state to be isLoading",
-    default: "false"
-  },
-  {
-    property: "onClick",
-    type: "function",
-    description:<div>
-      <p>
-        Set the handler of the click event
-      </p>
-      <b>Signature </b>
-      <code>(event) =&gt; void;</code>
-    </div>,
-  },
-  {
-    property: "outlined",
-    type: "boolean",
-    description: "Set the button style to be outlined",
-    default: "false"
-  },
-  {
-    property: "rounded",
-    type: "boolean",
-    description: "Set the button edges to be rounded",
-    default: "false"
-  },
-  {
-    property: "variant",
-    type: <a href="/overview">variants</a>,
-    description: "Set the color variant of the button",
-    default: "primary"
-  }
 ]
 
 export const IconButtonApi: IApiItem[] = [
@@ -66,7 +44,7 @@ export const IconButtonApi: IApiItem[] = [
   },
   {
     property: "name",
-    type: <a href="/icon">icon names</a>,
-    description: "Sets the icon of the button. Sourcing from faanshu-ui icons",
+    type: <a href="/icon">icon</a>,
+    description: "Sets the icon of the button. Sourcing from faansyu-ui icons",
   }
 ]

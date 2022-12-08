@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { Size, Variant, BaseComponentProps, FontWeight } from '../../fs.types'
 
-export interface TextProps extends
-  React.HTMLAttributes<HTMLSpanElement>,
+export interface LinkProps extends
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
   BaseComponentProps {
   fontSize?: Size;
   color?: Variant;
   fontWeight?: FontWeight;
 }
 
-const StyledText = styled.span<TextProps>((props) => {
+const StyledLink = styled.a<LinkProps>((props) => {
   const { colors, fontSize } = props.theme
   return {
     fontSize: props.fontSize ? fontSize[props.fontSize] : fontSize.s,
@@ -19,13 +19,16 @@ const StyledText = styled.span<TextProps>((props) => {
   }
 })
 
-export function Text({
+export function Link({
   children,
   ...restProps
-}: TextProps): React.ReactElement {
+}: LinkProps): React.ReactElement {
   return (
-    <StyledText className='fsui-text' {...restProps}>
+    <StyledLink
+      className='fsui-link'
+      {...restProps}
+    >
       {children}
-    </StyledText>
+    </StyledLink>
   )
 }

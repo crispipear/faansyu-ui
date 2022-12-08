@@ -1,15 +1,15 @@
-# faanshu-ui
+# faansyu-ui
 
 In progress work.
 A simple ui kit/component library for React.
 Project bootstrapped by [create-react-library](https://github.com/transitive-bullshit/create-react-library)
 
-[![NPM](https://img.shields.io/npm/v/faanshu-ui.svg)](https://www.npmjs.com/package/faanshu-ui) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/faansyu-ui.svg)](https://www.npmjs.com/package/faansyu-ui) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save faanshu-ui
+npm install --save faansyu-ui
 ```
 
 ## License

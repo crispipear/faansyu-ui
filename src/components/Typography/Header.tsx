@@ -7,7 +7,9 @@ import {
   BaseComponentProps
 } from '../../fs.types'
 
-export interface HeaderProps extends BaseComponentProps {
+export interface HeaderProps extends
+  React.HTMLAttributes<HTMLHeadingElement>,
+  BaseComponentProps {
   fontSize?: Size;
   color?: Variant;
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

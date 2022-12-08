@@ -10,7 +10,9 @@ import {
   hoverColor
 } from '../../utils/cssUtils'
 
-export interface ButtonProps extends BaseComponentProps {
+export interface ButtonProps extends
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  BaseComponentProps {
   clear?: boolean;
   disabled?: boolean;
   external?: boolean;
@@ -21,7 +23,6 @@ export interface ButtonProps extends BaseComponentProps {
   rounded?: boolean;
   target?: string;
   variant?: Variant;
-  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 const StyledButton = styled.button<ButtonProps>((props) => {
@@ -73,7 +74,7 @@ export function Button({
   onClick,
   ...restProps
 }: ButtonProps): React.ReactElement {
-  function handleClick(e: React.MouseEvent<HTMLElement>): void {
+  function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
     if (onClick && !restProps.isLoading && !restProps.disabled) {
       onClick(e)
     }

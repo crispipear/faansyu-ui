@@ -1,3 +1,5 @@
+import React from "react";
+
 export type Primitive = string | number | symbol | boolean;
 
 export type Shade = 'light' | 'main' | 'dark';
@@ -33,9 +35,10 @@ export interface FsTheme {
   colors: Colors;
 }
 
-export type BaseComponentProps = React.PropsWithChildren<{
+export type BaseComponentProps = {
+  children?: React.ReactNode;
   className?: string;
   id?: string;
   style?: React.CSSProperties;
   anchor?: boolean;
-}>
+}

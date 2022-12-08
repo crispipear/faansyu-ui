@@ -1,21 +1,18 @@
 import React from 'react'
-import { Header, Paragraph } from 'faanshu-ui'
+import { Header, Paragraph } from 'faansyu-ui'
 
 const About = () => {
   return (
     <>
       <Header>About</Header>
       <Paragraph>
-        <b>faanshu-ui</b> is a React ui library with easily integrated, reusable components.
-        Our primary goal is to create a react library that helps creators to build a variety of web applications
-        that maintains consistency, accessibility and minimal aethestics.
+        <b>faansyu-ui</b> is a React ui library with easily integrated, reusable and customizable components.
+Our primary goal is to create a kit that helps creators to build a variety of web applications
+while maintaining design consistency, accessibility and minimal aethestics.
       </Paragraph>
       <Paragraph>
-        In 2019, we started a side project outside of work/school.
-        While building out the project, we wanted to turn those ui components into a dedicated design system
+        This started a side project outside of work/school, we wanted to turn those ui components into a dedicated design system
         for our future projects and for other developers who are interested.
-        Even though this library is currently not fully matured, we are
-        continuously working on improving it.
       </Paragraph>
       <Header fontSize="m">Creators</Header>
       <Paragraph>
@@ -23,9 +20,9 @@ const About = () => {
         <br/>
         <a href="https://github.com/friedchickenli">Min Li - @friedchickenli</a>
       </Paragraph>
-      <Header fontSize="m">Why the name faanshu?</Header>
+      <Header fontSize="m">Why the name faansyu?</Header>
       <Paragraph>
-        We named this library "faan shu" which means "yam" in Cantonese, which is what our mom usually calls us.
+        We named this library "faan syu" (means "yam" in Cantonese)—which is what our mom usually calls us.
       </Paragraph>
     </>
   )

@@ -1,6 +1,8 @@
 import React from 'react'
 import Demo, { createCodeString } from '../../Demo';
-import { Header, Paragraph, Table, ITableColumn } from 'faanshu-ui'
+import { Header, Table, ITableColumn, Paragraph } from 'faansyu-ui'
+import { ApiTable } from '../../ApiTable'
+import { TableApi, ColumnApi } from './Table.api';
 
 interface ITea {
   name: string
@@ -57,9 +59,10 @@ const data: ITea[] = [
     name: "Tieguanyin",
     type: "Oolong",
     chinese: "铁观音"
-  },
-]
-const TABLE_STRING = "<Table data={data} columns={columns} />"
+  }
+];
+
+const TABLE_STRING = "<Table data={data} columns={columns} />";
 
 const TablePage = () => {
   return (
@@ -79,6 +82,9 @@ const TablePage = () => {
       >
         <Table data={data} columns={columns} striped={true} />
       </Demo>
+      <Header anchor tag="h2">API</Header>
+      <ApiTable api={TableApi} />
+      <ApiTable api={ColumnApi} header="Column" />
     </div>
   )
 }

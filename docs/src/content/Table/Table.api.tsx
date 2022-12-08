@@ -1,5 +1,5 @@
 import React from 'react'
-import { IApiItem, light, variant } from "../ApiTable"
+import { IApiItem, light, variant } from "../../ApiTable"
 
 const componentName = 'Table';
 

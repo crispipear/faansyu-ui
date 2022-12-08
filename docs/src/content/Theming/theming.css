@@ -1,0 +1,15 @@
+.shadeDemo__container input {
+  margin-right: 0.64rem;
+  width: 20%;
+  max-width: 200px;
+}
+.shadeDemo__colorContainer {
+  display: inline-block;
+  text-align: center;
+  margin-left: 0.64rem;
+}
+.shadeDemo__colorContainer > div {
+  width: 50px;
+  height: 20px;
+  margin-bottom: 0.4rem;
+}

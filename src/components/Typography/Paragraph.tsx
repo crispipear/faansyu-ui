@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Size, Variant, BaseComponentProps } from '../../fs.types'
 
-export interface ParagraphProps extends BaseComponentProps {
+export interface ParagraphProps extends
+React.HTMLAttributes<HTMLParagraphElement>,
+BaseComponentProps {
   fontSize?: Size;
   color?: Variant;
 }
