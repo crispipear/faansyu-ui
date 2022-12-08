@@ -9,7 +9,6 @@
   "module": "dist/index.modern.js",
   "source": "src/index.ts",
   "scripts": {
-    "dev": "concurrently \"npm run build-watch\" \"cd docs/ && npm run start\"",
     "build": "tsup",
     "build-watch": "tsup --watch"
   },
@@ -19,7 +18,6 @@
     "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^8.2.5",
-    "concurrently": "^7.5.0",
     "eslint": "^8.26.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
