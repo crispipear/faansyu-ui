@@ -1,10 +1,5 @@
 import React from 'react'
-import { 
-  FsProvider,
-  Header,
-  HeaderProps,
-  Paragraph,
-} from 'faansyu-ui'
+import { FsProvider } from 'faansyu-ui'
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,7 +20,7 @@ const COMPONENT_ROUTES = ROUTES.map(
 const App = () => {
   return (
     <FsProvider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Nav componentsList={ROUTES}/>
         <main className="main" id="main-content">
           <Routes>

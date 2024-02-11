@@ -1,21 +1,21 @@
 {
   "name": "faansyu-ui-docs",
-  "homepage": "http://crispipear.github.io/faansyu-ui",
+  "homepage": "https://crispipear.github.io/faansyu-ui",
   "version": "0.0.1",
   "private": true,
+  "proxy": "http://localhost:3000/faansyu-ui",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@testing-library/jest-dom": "file:../node_modules/@testing-library/jest-dom",
     "@testing-library/react": "file:../node_modules/@testing-library/react",
     "@testing-library/user-event": "file:../node_modules/@testing-library/user-event",
     "@types/jest": "file:../node_modules/@types/jest",
-    "@types/node": "file:../node_modules/@types/node",
     "@types/react": "file:../node_modules/@types/react",
     "@types/react-dom": "file:../node_modules/@types/react-dom",
     "@types/react-syntax-highlighter": "^13.5.0",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "@types/node": "^20.11.17",
     "@types/react-router-dom": "^5.1.6",
     "gh-pages": "^6.1.1"
   },
