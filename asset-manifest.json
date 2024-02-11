@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/faansyu-ui/static/css/main.d3db8fb0.css",
+    "main.js": "/faansyu-ui/static/js/main.7864ee38.js",
+    "index.html": "/faansyu-ui/index.html",
+    "main.d3db8fb0.css.map": "/faansyu-ui/static/css/main.d3db8fb0.css.map",
+    "main.7864ee38.js.map": "/faansyu-ui/static/js/main.7864ee38.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3db8fb0.css",
+    "static/js/main.7864ee38.js"
+  ]
+}
